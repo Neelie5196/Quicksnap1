@@ -54,7 +54,25 @@ namespace CardGames.GameLogic
 		/// </summary>
 		public void Shuffle()
 		{
-			//TODO: implement shuffle!
+            for (int i = 0; i < 52; i++)
+            {
+                if (_cards[i].FaceUp) _cards[i].TurnOver();
+
+            }
+            Random rnd = new random ();
+
+            //for each card (no need to shuffle last card)
+            for (int i = 0; i < 52 - 1; i++)
+            {
+                //pick a random Index
+                int rndIdx = rnd.Next(52 - i);
+
+                Card temp = _cards[i];
+                _cards[i] = _cards[i + rndIdx];
+                _cards[i + rndIdx] = temp;
+            }
+            _topCard = 0;
+
 		}
         
 		/// <summary>
@@ -75,6 +93,8 @@ namespace CardGames.GameLogic
 		    }
 		
         }
+
+
 	}
 
 	#region Deck Unit Tests
