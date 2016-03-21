@@ -9,7 +9,7 @@ namespace CardGames
         public static void LoadResources()
         {
             Bitmap cards;
-            cards = SwinGame.LoadBitmapNamed ("Cards", "Cards.png");
+            cards = SwinGame.LoadBitmapNamed ("Cards2", "Cards2.png");
             SwinGame.BitmapSetCellDetails (cards, 167, 250, 13, 5, 53);      // set the cells in the bitmap to match the cards
         }
 
@@ -44,7 +44,7 @@ namespace CardGames
 				SwinGame.DrawText ("Top Card is " + top.ToString (), Color.RoyalBlue, 0, 20);
 				SwinGame.DrawText ("Player 1 score: " + myGame.Score(0), Color.RoyalBlue, 0, 30);
 				SwinGame.DrawText ("Player 2 score: " + myGame.Score(1), Color.RoyalBlue, 0, 40);
-				SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards"), top.CardIndex, 521, 153);
+				SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards2"), top.CardIndex, 521, 153);
 			}
 			else
 			{
@@ -52,7 +52,7 @@ namespace CardGames
 			}
 
 			// Draw the back of the cards... to represent the deck
-			SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards"), 52, 155, 153);
+			SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards2"), 52, 155, 153);
 
 			//Draw onto the screen
 			SwinGame.RefreshScreen(60);
